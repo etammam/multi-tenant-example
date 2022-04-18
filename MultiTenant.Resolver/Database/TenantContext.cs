@@ -2,12 +2,13 @@
 
 namespace MultiTenant.Core.Database
 {
-    public class TenantContextDatabase : DbContext
+    public class TenantContext : DbContext
     {
-        public TenantContextDatabase(DbContextOptions<TenantContextDatabase> options)
+        public TenantContext(DbContextOptions<TenantContext> options)
             : base(options)
         {
-
+            Database.EnsureCreated();
+            Database.Migrate();
         }
 
         public DbSet<Tenant> Tenants { get; set; }

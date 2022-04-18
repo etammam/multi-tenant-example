@@ -19,7 +19,7 @@ namespace MultiTenant.Core
 
             if (tenantConfiguration.Provider == DatabaseProviders.POSTGRES)
             {
-                services.AddDbContext<TenantContextDatabase>(options =>
+                services.AddDbContext<TenantContext>(options =>
                 {
                     options.UseNpgsql(tenantConfiguration.ConnectionString, builder
                         =>
@@ -32,7 +32,7 @@ namespace MultiTenant.Core
 
             if (tenantConfiguration.Provider == DatabaseProviders.MsSQL)
             {
-                services.AddDbContext<TenantContextDatabase>(options =>
+                services.AddDbContext<TenantContext>(options =>
                 {
                     options.UseSqlServer(tenantConfiguration.ConnectionString,
                         builder =>

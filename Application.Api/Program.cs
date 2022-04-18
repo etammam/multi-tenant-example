@@ -15,7 +15,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTenantServices(builder.Configuration);
 
 var app = builder.Build();
-app.UpdateDatabase();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace MultiTenant.Resolver.Database.Migrations.Npgsql.Migrations
 {
-    [DbContext(typeof(NpgsqlTenantDatabaseContext))]
+    [DbContext(typeof(NpgsqlTenantContext))]
     partial class NpgsqlTenantDatabaseContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

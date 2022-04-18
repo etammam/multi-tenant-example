@@ -1,8 +1,6 @@
 ﻿using Application.Core.Infrastructure.EntityConfigurations;
 using Application.Domain;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using MultiTenant.Core.Dtos;
 
 namespace Application.Core.Infrastructure;
 

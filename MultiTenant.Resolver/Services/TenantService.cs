@@ -6,10 +6,10 @@ namespace MultiTenant.Core.Services
 {
     public class TenantService : ITenantService
     {
-        private readonly TenantContextDatabase _database;
+        private readonly TenantContext _database;
         private readonly ITenantConnectionStringBuilderService _connectionStringBuilderService;
 
-        public TenantService(TenantContextDatabase database,
+        public TenantService(TenantContext database,
             ITenantConnectionStringBuilderService connectionStringBuilderService)
         {
             _database = database;
