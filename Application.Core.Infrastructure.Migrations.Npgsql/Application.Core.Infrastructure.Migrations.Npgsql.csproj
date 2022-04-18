@@ -6,14 +6,14 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\MultiTenant.Resolver\MultiTenant.Core.csproj"/>
+      <ProjectReference Include="..\Application.Core.Infrastructure\Application.Core.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

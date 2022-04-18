@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MultiTenant.Resolver.Database.Migrations.Npgsql.Migrations
 {
     [DbContext(typeof(NpgsqlTenantDatabaseContext))]
-    [Migration("20220417141548_InitialCreate")]
+    [Migration("20220418015803_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace MultiTenant.Resolver.Database.Migrations.Npgsql.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("MultiTenant.Resolver.Database.Tenant", b =>
+            modelBuilder.Entity("MultiTenant.Core.Database.Tenant", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -50,6 +50,16 @@ namespace MultiTenant.Resolver.Database.Migrations.Npgsql.Migrations
                         .IsUnique();
 
                     b.ToTable("Tenants");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("a2f50c97-8df2-4343-8e13-ce3c3c8550cb"),
+                            ConnectionString = "data source=192.168.1.60;user id=sa; password=Code@1903;initial catalog=tenant-default",
+                            Identifier = "default",
+                            Name = "Default",
+                            Provider = 0
+                        });
                 });
 #pragma warning restore 612, 618
         }

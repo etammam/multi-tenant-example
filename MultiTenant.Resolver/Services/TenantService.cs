@@ -8,6 +8,7 @@ namespace MultiTenant.Core.Services
     {
         private readonly TenantContextDatabase _database;
         private readonly ITenantConnectionStringBuilderService _connectionStringBuilderService;
+
         public TenantService(TenantContextDatabase database,
             ITenantConnectionStringBuilderService connectionStringBuilderService)
         {
@@ -20,7 +21,14 @@ namespace MultiTenant.Core.Services
             return await _database.Tenants.FirstOrDefaultAsync(d => d.Identifier == identifier);
         }
 
-        public async Task<DatabaseConnectivityConfiguration> GetTenantDatabaseConnectivityConfigurationAsync(string identifier)
+        public DatabaseConnectivityConfiguration GetTenantDatabaseConnectivityConfiguration(string identifier)
+        {
+            var tenant = _database.Tenants.FirstOrDefault(d => d.Identifier == identifier);
+            return new DatabaseConnectivityConfiguration(tenant.ConnectionString, tenant.Provider);
+        }
+
+        public async Task<DatabaseConnectivityConfiguration> GetTenantDatabaseConnectivityConfigurationAsync(
+            string identifier)
         {
             var tenant = await _database.Tenants.FirstOrDefaultAsync(d => d.Identifier == identifier);
             return new DatabaseConnectivityConfiguration(tenant.ConnectionString, tenant.Provider);
