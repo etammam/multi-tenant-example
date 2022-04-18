@@ -23,7 +23,7 @@ public class SqlServerAppContext : AppContext
         }
     }
 
-    private readonly DatabaseConnectivityConfiguration _configuration;
+    private readonly TenantConnectionInfo _configuration;
     private readonly IServiceProvider _serviceProvider;
 
     public SqlServerAppContext(DbContextOptions<AppContext> options, IServiceProvider serviceProvider) 

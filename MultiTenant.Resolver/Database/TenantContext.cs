@@ -7,8 +7,6 @@ namespace MultiTenant.Core.Database
         public TenantContext(DbContextOptions<TenantContext> options)
             : base(options)
         {
-            Database.EnsureCreated();
-            Database.Migrate();
         }
 
         public DbSet<Tenant> Tenants { get; set; }

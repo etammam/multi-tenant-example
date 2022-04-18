@@ -1,15 +1,20 @@
 ﻿using Application.Shared.Constants;
 using Microsoft.AspNetCore.Http;
+using MultiTenant.Core.Dtos;
+using MultiTenant.Core.Services;
 
 namespace Application.Core.TenantResolver
 {
     public class TenantResolverService : ITenantResolverService
     {
         private readonly IHttpContextAccessor _contextAccessor;
-
-        public TenantResolverService(IHttpContextAccessor contextAccessor)
+        private readonly ITenantService _tenantService;
+        private readonly ConnectionCacheService _connectionCacheService;
+        public TenantResolverService(IHttpContextAccessor contextAccessor, ITenantService tenantService, ConnectionCacheService connectionCacheService)
         {
             _contextAccessor = contextAccessor;
+            _tenantService = tenantService;
+            _connectionCacheService = connectionCacheService;
         }
 
         public string GetTenantIdentifier()
@@ -22,6 +27,17 @@ namespace Application.Core.TenantResolver
             }
 
             return TenantConstant.DefaultConstantIdentifier;
+        }
+
+        public TenantConnectionInfo GetTenantConnection(string tenantIdentifier)
+        {
+            var cachedConnection = _connectionCacheService.GetConnection(tenantIdentifier);
+            if (cachedConnection != null)
+                return cachedConnection;
+
+            var connection = _tenantService.GetTenantDatabaseConnectivityConfiguration(tenantIdentifier);
+            _connectionCacheService.AddConnection(tenantIdentifier, connection);
+            return connection;
         }
     }
 }

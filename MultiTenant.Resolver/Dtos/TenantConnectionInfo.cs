@@ -2,14 +2,14 @@
 
 namespace MultiTenant.Core.Dtos
 {
-    public class DatabaseConnectivityConfiguration
+    public class TenantConnectionInfo
     {
-        public DatabaseConnectivityConfiguration()
+        public TenantConnectionInfo()
         {
 
         }
 
-        public DatabaseConnectivityConfiguration(string connectionString, DatabaseProviders provider)
+        public TenantConnectionInfo(string connectionString, DatabaseProviders provider)
         {
             ConnectionString = connectionString;
             Provider = provider;

@@ -21,17 +21,17 @@ namespace MultiTenant.Core.Services
             return await _database.Tenants.FirstOrDefaultAsync(d => d.Identifier == identifier);
         }
 
-        public DatabaseConnectivityConfiguration GetTenantDatabaseConnectivityConfiguration(string identifier)
+        public TenantConnectionInfo GetTenantDatabaseConnectivityConfiguration(string identifier)
         {
             var tenant = _database.Tenants.FirstOrDefault(d => d.Identifier == identifier);
-            return new DatabaseConnectivityConfiguration(tenant.ConnectionString, tenant.Provider);
+            return new TenantConnectionInfo(tenant.ConnectionString, tenant.Provider);
         }
 
-        public async Task<DatabaseConnectivityConfiguration> GetTenantDatabaseConnectivityConfigurationAsync(
+        public async Task<TenantConnectionInfo> GetTenantDatabaseConnectivityConfigurationAsync(
             string identifier)
         {
             var tenant = await _database.Tenants.FirstOrDefaultAsync(d => d.Identifier == identifier);
-            return new DatabaseConnectivityConfiguration(tenant.ConnectionString, tenant.Provider);
+            return new TenantConnectionInfo(tenant.ConnectionString, tenant.Provider);
         }
 
         public Task<List<Tenant>> GetTenantListAsync()

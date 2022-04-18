@@ -20,7 +20,7 @@ public class SqlServerAppContextFactory : IDesignTimeDbContextFactory<SqlServerA
 
     public SqlServerAppContext CreateDbContext(string[] args)
     {
-        var databaseConnection = new DatabaseConnectivityConfiguration();
+        var databaseConnection = new TenantConnectionInfo();
         var builder = new DbContextOptionsBuilder<AppContext>();
         builder.UseSqlServer("data source=192.168.1.60;user id=sa; password=Code@1903;initial catalog=tenant-default", builder =>
         {

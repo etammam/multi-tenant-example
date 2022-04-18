@@ -31,6 +31,7 @@ namespace Application.Core
             var tenantConfiguration = new TenantConfiguration();
             configuration.Bind(nameof(tenantConfiguration), tenantConfiguration);
             services.AddSingleton(tenantConfiguration);
+            services.AddSingleton(typeof(ConnectionCacheService));
             services.AddMultiTenant(options =>
             {
                 options.Provider = tenantConfiguration.Provider;
@@ -45,8 +46,9 @@ namespace Application.Core
             var tenantManger = serviceProvider.GetRequiredService<ITenantService>();
             var tenantResolver = serviceProvider.GetRequiredService<ITenantResolverService>();
             var tenantIdentifier = tenantResolver.GetTenantIdentifier();
-            var tenantConnection = tenantManger.GetTenantDatabaseConnectivityConfiguration(tenantIdentifier);
+            //var tenantConnection = tenantManger.GetTenantDatabaseConnectivityConfiguration(tenantIdentifier);
 
+            var tenantConnection = tenantResolver.GetTenantConnection(tenantIdentifier);
             var provider = tenantConnection.Provider;
             var connectionString = tenantConnection.ConnectionString;
 
@@ -64,7 +66,6 @@ namespace Application.Core
                     {
                         builder.MigrationsAssembly("Application.Core.Infrastructure.Migrations.Npgsql");
                     });
-                    break;
                 case DatabaseProviders.ORACLE:
                     break;
                 default:
@@ -73,7 +74,7 @@ namespace Application.Core
 
             return null;
         }
-        
+
         public static IApplicationBuilder UpdateDatabase(this IApplicationBuilder app)
         {
             using var scope = app.ApplicationServices.GetService<IServiceScopeFactory>()?.CreateScope();
