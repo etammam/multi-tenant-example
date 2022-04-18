@@ -6,10 +6,10 @@ namespace MultiTenant.Core.Services
 {
     public class TenantService : ITenantService
     {
-        private readonly TenantContext _database;
+        private readonly CatalogContext _database;
         private readonly ITenantConnectionStringBuilderService _connectionStringBuilderService;
 
-        public TenantService(TenantContext database,
+        public TenantService(CatalogContext database,
             ITenantConnectionStringBuilderService connectionStringBuilderService)
         {
             _database = database;
@@ -21,17 +21,17 @@ namespace MultiTenant.Core.Services
             return await _database.Tenants.FirstOrDefaultAsync(d => d.Identifier == identifier);
         }
 
-        public TenantConnectionInfo GetTenantDatabaseConnectivityConfiguration(string identifier)
+        public TenantInfo GetTenantDatabaseConnectivityConfiguration(string identifier)
         {
             var tenant = _database.Tenants.FirstOrDefault(d => d.Identifier == identifier);
-            return new TenantConnectionInfo(tenant.ConnectionString, tenant.Provider);
+            return new TenantInfo(tenant.ConnectionString, tenant.Provider);
         }
 
-        public async Task<TenantConnectionInfo> GetTenantDatabaseConnectivityConfigurationAsync(
+        public async Task<TenantInfo> GetTenantDatabaseConnectivityConfigurationAsync(
             string identifier)
         {
             var tenant = await _database.Tenants.FirstOrDefaultAsync(d => d.Identifier == identifier);
-            return new TenantConnectionInfo(tenant.ConnectionString, tenant.Provider);
+            return new TenantInfo(tenant.ConnectionString, tenant.Provider);
         }
 
         public Task<List<Tenant>> GetTenantListAsync()

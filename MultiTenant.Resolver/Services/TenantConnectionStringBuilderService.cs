@@ -7,7 +7,7 @@ using Npgsql;
 
 namespace MultiTenant.Core.Services
 {
-    public class TenantConnectionStringBuilderService :
+    internal class TenantConnectionStringBuilderService :
         ITenantConnectionStringBuilderService
     {
         private DatabaseConnectionBuilderModel _connectionBuilderModel;

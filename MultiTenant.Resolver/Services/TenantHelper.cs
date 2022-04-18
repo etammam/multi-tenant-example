@@ -2,7 +2,7 @@
 
 namespace MultiTenant.Core.Services
 {
-    public static class TenantHelper
+    internal static class TenantHelper
     {
         public static string GenerateHashedCode()
         {

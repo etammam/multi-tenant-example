@@ -19,7 +19,7 @@ public class NpgsqlAppContextFactory: IDesignTimeDbContextFactory<NpgsqlAppConte
 
     public NpgsqlAppContext CreateDbContext(string[] args)
     {
-        var databaseConnection = new TenantConnectionInfo();
+        var databaseConnection = new TenantInfo();
         var builder = new DbContextOptionsBuilder<AppContext>();
         builder.UseNpgsql("User Id=postgres;Password=MadCode@01100072682;Host=192.168.1.60;Database=tenant-default;", builder =>
         {

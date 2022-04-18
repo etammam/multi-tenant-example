@@ -23,7 +23,7 @@ public class NpgsqlAppContext : AppContext
         }
     }
 
-    private readonly TenantConnectionInfo _configuration;
+    private readonly TenantInfo _configuration;
     private readonly IServiceProvider _serviceProvider;
 
     public NpgsqlAppContext(DbContextOptions<AppContext> options,

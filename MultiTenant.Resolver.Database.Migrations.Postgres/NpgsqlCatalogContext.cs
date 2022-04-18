@@ -3,9 +3,9 @@ using MultiTenant.Core.Database;
 
 namespace MultiTenant.Resolver.Database.Migrations.Npgsql
 {
-    public class NpgsqlTenantContext : TenantContext
+    public class NpgsqlCatalogContext : CatalogContext
     {
-        public NpgsqlTenantContext(DbContextOptions<TenantContext> options)
+        public NpgsqlCatalogContext(DbContextOptions<CatalogContext> options)
             : base(options)
         {
         }

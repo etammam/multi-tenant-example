@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace MultiTenant.Resolver.Database.Migrations.Npgsql.Migrations
 {
-    [DbContext(typeof(NpgsqlTenantContext))]
+    [DbContext(typeof(NpgsqlCatalogContext))]
     [Migration("20220418015803_InitialCreate")]
     partial class InitialCreate
     {

@@ -2,9 +2,9 @@
 
 namespace MultiTenant.Core.Database
 {
-    public class TenantContext : DbContext
+    public class CatalogContext : DbContext
     {
-        public TenantContext(DbContextOptions<TenantContext> options)
+        public CatalogContext(DbContextOptions<CatalogContext> options)
             : base(options)
         {
         }

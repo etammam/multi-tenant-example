@@ -3,9 +3,9 @@ using MultiTenant.Core.Database;
 
 namespace MultiTenant.Resolver.Database.Migrations.SqlServer
 {
-    public class SqlServerTenantContext : TenantContext
+    public class SqlServerCatalogContext : CatalogContext
     {
-        public SqlServerTenantContext(DbContextOptions<TenantContext> options)
+        public SqlServerCatalogContext(DbContextOptions<CatalogContext> options)
             : base(options)
         {
         }

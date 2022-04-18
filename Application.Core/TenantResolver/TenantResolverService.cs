@@ -29,7 +29,7 @@ namespace Application.Core.TenantResolver
             return TenantConstant.DefaultConstantIdentifier;
         }
 
-        public TenantConnectionInfo GetTenantConnection(string tenantIdentifier)
+        public TenantInfo GetTenantConnection(string tenantIdentifier)
         {
             var cachedConnection = _connectionCacheService.GetConnection(tenantIdentifier);
             if (cachedConnection != null)

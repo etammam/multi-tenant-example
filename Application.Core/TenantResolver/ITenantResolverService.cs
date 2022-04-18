@@ -5,6 +5,6 @@ namespace Application.Core.TenantResolver
     public interface ITenantResolverService
     {
         string GetTenantIdentifier();
-        TenantConnectionInfo GetTenantConnection(string tenantIdentifier);
+        TenantInfo GetTenantConnection(string tenantIdentifier);
     }
 }
