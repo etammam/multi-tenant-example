@@ -21,7 +21,7 @@ namespace Catalog.Api.Extensions
             }
             throw new ArgumentOutOfRangeException(nameof(provider), "provider is not supported");
         }
-        public static IApplicationBuilder UseAutomaticMigrations(this IApplicationBuilder app, IServiceCollection services, DatabaseProviders provider)
+        public static IApplicationBuilder UseAutomaticMigrations(this IApplicationBuilder app, DatabaseProviders provider)
         {
             if (provider == DatabaseProviders.POSTGRES)
             {

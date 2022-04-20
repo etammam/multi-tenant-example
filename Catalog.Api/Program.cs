@@ -21,7 +21,7 @@ builder.Services.AddMultiTenant(options =>
 builder.Services.AddProviderContext(tenantConfiguration.Provider);
 var app = builder.Build();
 
-app.UseAutomaticMigrations(builder.Services, tenantConfiguration.Provider);
+app.UseAutomaticMigrations(tenantConfiguration.Provider);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
