@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MultiTenant.Core.Dtos;
+﻿using Catalog.Core.Dtos;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Core.Infrastructure.Migrations.SqlServer;
 
@@ -9,7 +9,7 @@ public class SqlServerAppContext : AppContext
     {
         if (_configuration is not {})
         {
-            optionsBuilder.UseSqlServer(_configuration.ConnectionString, builder =>
+            optionsBuilder.UseSqlServer(_configuration?.ConnectionString!, builder =>
             {
                 builder.MigrationsAssembly("Application.Core.Infrastructure.Migrations.SqlServer");
             });

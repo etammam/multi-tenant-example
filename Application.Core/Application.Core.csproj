@@ -18,7 +18,6 @@
     <ProjectReference Include="..\Application.Core.Infrastructure.Migrations.Npgsql\Application.Core.Infrastructure.Migrations.Npgsql.csproj" />
     <ProjectReference Include="..\Application.Core.Infrastructure.Migrations.SqlServer\Application.Core.Infrastructure.Migrations.SqlServer.csproj" />
     <ProjectReference Include="..\Application.Core.Infrastructure\Application.Core.Infrastructure.csproj" />
-    <ProjectReference Include="..\MultiTenant.Resolver\MultiTenant.Core.csproj" />
   </ItemGroup>
 
 </Project>

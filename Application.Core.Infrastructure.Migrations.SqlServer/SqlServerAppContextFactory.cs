@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Catalog.Core.Dtos;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.DependencyInjection;
-using MultiTenant.Core.Dtos;
 
 namespace Application.Core.Infrastructure.Migrations.SqlServer;
 
@@ -11,6 +10,7 @@ public class SqlServerAppContextFactory : IDesignTimeDbContextFactory<SqlServerA
     {
         
     }
+    
     private readonly IServiceProvider _serviceProvider;
 
     public SqlServerAppContextFactory(IServiceProvider serviceProvider)

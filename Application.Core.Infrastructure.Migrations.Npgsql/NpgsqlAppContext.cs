@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MultiTenant.Core.Dtos;
+﻿using Catalog.Core.Dtos;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Core.Infrastructure.Migrations.Npgsql;
 

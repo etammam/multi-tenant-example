@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTenant.Core", "MultiTenant.Resolver\MultiTenant.Core.csproj", "{19AC55A2-24C5-4CE2-9318-7D49EF86ACF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Core", "Catalog.Core\Catalog.Core.csproj", "{19AC55A2-24C5-4CE2-9318-7D49EF86ACF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTenant.Resolver.Database.Migrations.Npgsql", "MultiTenant.Resolver.Database.Migrations.Postgres\MultiTenant.Resolver.Database.Migrations.Npgsql.csproj", "{F9D5AA8C-F476-4B28-B0B8-59C669651E38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Database.Migrations.Npgsql", "Catalog.Database.Migrations.Npgsql\Catalog.Database.Migrations.Npgsql.csproj", "{F9D5AA8C-F476-4B28-B0B8-59C669651E38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTenant.Api", "MultiTenant.Api\MultiTenant.Api.csproj", "{DA9C9FBE-5586-4088-BCE7-D96D6471D846}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Api", "Catalog.Api\Catalog.Api.csproj", "{DA9C9FBE-5586-4088-BCE7-D96D6471D846}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTenant.Resolver.Database.Migrations.SqlServer", "MultiTenant.Resolver.Database.Migrations.MsSQL\MultiTenant.Resolver.Database.Migrations.SqlServer.csproj", "{8415DEBC-444D-4C89-9860-5D91E805E4DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Database.Migrations.SqlServer", "Catalog.Database.Migrations.SqlServer\Catalog.Database.Migrations.SqlServer.csproj", "{8415DEBC-444D-4C89-9860-5D91E805E4DE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tenancy", "Tenancy", "{3BA0EAD7-14EF-49E8-B157-10653101E51D}"
 EndProject

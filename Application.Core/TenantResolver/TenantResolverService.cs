@@ -1,7 +1,7 @@
 ﻿using Application.Shared.Constants;
 using Microsoft.AspNetCore.Http;
-using MultiTenant.Core.Dtos;
-using MultiTenant.Core.Services;
+using Catalog.Core.Dtos;
+using Catalog.Core.Services;
 
 namespace Application.Core.TenantResolver
 {

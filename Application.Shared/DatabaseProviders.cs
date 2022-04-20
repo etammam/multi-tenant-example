@@ -1,4 +1,4 @@
-﻿namespace MultiTenant.Core.Database
+﻿namespace Application.Shared
 {
     public enum DatabaseProviders
     {

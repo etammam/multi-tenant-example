@@ -1,12 +1,13 @@
 ﻿using Application.Core.TenantResolver;
+using Application.Shared;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MultiTenant.Core;
-using MultiTenant.Core.Configurations;
-using MultiTenant.Core.Database;
-using MultiTenant.Core.Services;
+using Catalog.Core;
+using Catalog.Core.Configurations;
+using Catalog.Core.Database;
+using Catalog.Core.Services;
 using AppContext = Application.Core.Infrastructure.AppContext;
 
 namespace Application.Core

@@ -22,7 +22,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Application.Domain\Application.Domain.csproj" />
-		<ProjectReference Include="..\MultiTenant.Resolver\MultiTenant.Core.csproj" />
+		<ProjectReference Include="..\Catalog.Core\Catalog.Core.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿using MultiTenant.Core.Dtos;
+﻿using Catalog.Core.Dtos;
 using System.Collections.Concurrent;
 
 namespace Application.Core.TenantResolver

@@ -22,8 +22,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Application.Core\Application.Core.csproj" />
-    <ProjectReference Include="..\MultiTenant.Resolver.Database.Migrations.MsSQL\MultiTenant.Resolver.Database.Migrations.SqlServer.csproj" />
-    <ProjectReference Include="..\MultiTenant.Resolver.Database.Migrations.Postgres\MultiTenant.Resolver.Database.Migrations.Npgsql.csproj" />
+    <ProjectReference Include="..\Catalog.Database.Migrations.Npgsql\Catalog.Database.Migrations.Npgsql.csproj" />
+    <ProjectReference Include="..\Catalog.Database.Migrations.SqlServer\Catalog.Database.Migrations.SqlServer.csproj" />
   </ItemGroup>
 
 </Project>
